@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Practice</title>
+</head>
+<body>
+    <script>
+        //1. Find the longest word
+        function longestword(str){
+            words = str.split(' ')
+            let longest = ''
+            for(let word of words){
+                if(word.length>longestword.length){
+                    longestword = word
+                }
+            }
+            return longestword
+            
+        }
+        let str = 'the quick brown fox'
+        console.log('Longest word in the sentence: ',longestword(str))
+
+        //2. Title case a sentence
+        function titlecase(str){
+            let words = str.split(' ')
+            let cap_words = []
+            for(let word of words){
+                let cap_word = word.charAt(0).toUpperCase() + word.slice(1,word.length)
+                cap_words.push(cap_word)
+            }
+            return cap_words.join(" ")
+        }
+        const sentence = 'My name is Nandita Mahesh'
+        console.log(titlecase(sentence))
+
+        //3. Largest number in an array
+        function largest(arr){
+            let sorted_arr = arr.sort()
+            return sorted_arr.slice(-1)
+        }
+        const arr = [2,3,5,2,4,6,8,9,6]
+        console.log('Largest element in the array: ',largest(arr))
+
+        //4. Count character occurances in a string
+        function charcount(str){
+            let counter = {}
+            let letters = str.split('')
+            for (let letter of letters){
+                if(counter[letter]){
+                    counter[letter] += 1
+                }else{
+                    counter[letter] = 1
+                }
+            }
+            return counter
+        }
+        const word = 'hello'
+        console.log('Character Occurances: ',charcount(word))
+    </script>
+</body>
+</html>
